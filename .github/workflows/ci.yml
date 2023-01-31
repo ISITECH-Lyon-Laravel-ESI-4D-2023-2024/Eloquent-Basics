@@ -43,6 +43,8 @@ jobs:
         run: |
           mkdir -p database
           touch database/database.sqlite
+          echo DB_CONNECTION=sqlite >> .env
+          echo DB_DATABASE=database/database.sqlite >> .env
       
       - name: List tests
         run: vendor/bin/phpunit --list-tests
